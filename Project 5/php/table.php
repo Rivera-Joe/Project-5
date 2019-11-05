@@ -2,11 +2,11 @@
 
 //set initial values
 $server = 'localhost';
-$user = 'username';
-$password = '';
+$user = 'root';
+
 
 //attempt to connecdt to DB
-$connect = mysqli_connect($server, $user, $password);
+$connect = mysqli_connect($server, $user);
 
 //check for connection
 if(!$connect){
@@ -17,13 +17,28 @@ if(!$connect){
 echo 'Connected Successfully';
 
 //create database
-$sql_createDB = 'CREATE DATABASE Adoption_Center';
+$sql_createDB = 'CREATE DATABASE adoptionCenter';
 
+mysqli_query($connect, $sql_createDB);
 //check for database creation
-(mysqli_query($connect, $sql_createDB))? echo 'Database created successfully'; : echo 'Error creating database: ' . $connection->error;
-
+//mysqli_query($connect, $sql_createDB) ? echo 'Database created successfully' : echo 'Error creating database: ' . mysqli_error($connect);
+if(mysqli_query($connect, $sql_createDB)){
+  echo 'Created database successfully';
+}
+else{
+  echo 'Error creating database: ' . mysqli_error($connect);
+}
 //create table
-$sql_createTable = "CREATE TABLE Animal_Table(id)"
+$sql_createTable = "CREATE TABLE Animal_Table(ID INT AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(20) NOT NULL, Species VARCHAR(10) NOT NULL, Breed VARCHAR(20) NOT NULL, Gender VARCHAR(1) NOT NULL, Color VARCHAR(15), Age VARCHAR(10), Size VARCHAR(1))";
+
+//check for table creation
+//mysqli_query($connect, $sql_createTable) ? echo 'Table created successfully' : echo 'Error creating table: ' . mysqli_error($connect);
+if(mysqli_query($connect, $sql_createTable)){
+  echo 'Created table successfully';
+}
+else{
+  echo 'Error creating table: ' . mysqli_error($connect);
+}
 
 
 
@@ -41,5 +56,4 @@ $sql_createTable = "CREATE TABLE Animal_Table(id)"
 
 
 
-
-$mysqli_close($connect); ?>
+mysqli_close($connect); ?>

@@ -54,15 +54,56 @@ function addEntry($name, $spec, $breed, $gender, $color, $age, $size){
 
 
 };
+//dogs
+$bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M');
+$tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L');
+$boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S');
+$hazel = addEntry('Hazel', 'Dog', 'Terrier', 'F', 'White', '1 Year', 'M');
+$penny = addEntry('Penny', 'Dog', 'Yorkie', 'F', 'Gold', '3 Years', 'S');
+$lola = addEntry('Lola', 'Dog', 'Shiba Inu', 'F', 'Brown', '1 Year', 'M');
+$hercules = addEntry('Hercules', 'Dog', 'Bull Dog', 'M', 'Grey', '2 Years', 'M');
+$coco = addEntry('Coco', 'Dog', 'Labrador', 'F', 'Brown', '6 Years', 'L');
+$archie = addEntry('Archie', 'Dog', 'Shih tzu', 'M', 'Brown', '3 Years', 'S');
+$bean = addEntry('Bean', 'Dog', 'Chihuahua', 'M', 'Brown', '1 Year', 'S');
 
-$entryString = addEntry('Bullet', 'Dog', 'Grey_Hound','M', 'White', '1_Year', 'M');
+//cats
+$bobo = addEntry('Bobo', 'Cat', 'Short Hair', 'F', 'Black', '6 Months', 'S');
+$calypso = addEntry('Calypso', 'Cat', 'Long Hair', 'F', 'Turtle Shell', '1 Year', 'M');
+$lily = addEntry('Lily', 'Cat', 'Short Hair', 'F', 'White', '9 Years', 'M');
+$meowMing = addEntry('Meow Ming', 'Cat', 'Short Hair', 'M', 'Brown', '3 Years', 'M');
+$sandy = addEntry('Sandy', 'Cat', 'Short Hair', 'F', 'Brown', '2 Years', 'M');
+$daisy = addEntry('Daisy', 'Cat', 'Short Hair', 'F', 'White', '1 Year', 'M');
+$casey = addEntry('Casey', 'Cat', 'Short Hair', 'F', 'Black', '8 Months', 'S');
+$jenny = addEntry('Jenny', 'Cat', 'Short Hair', 'F', 'White', '6 Months', 'S');
+$mack = addEntry('Mack', 'Cat', 'Short Hair', 'M', 'Brown', '5 Years', 'L');
+$tiger = addEntry('Tiger', 'Cat', 'Short Hair', 'M', 'Grey', '3 Years', 'L');
 
-
-if(mysqli_query($connect, $entryString)){
+$animalArray = array($bullet, $tate, $boomer, $hazel, $penny, $lola, $hercules, $coco, $archie, $bean, $bobo, $calypso, $lily, $meowMing, $sandy, $daisy, $casey, $jenny, $mack, $tiger);
+$arrLength = sizeof($animalArray);
+for($x = 0; $x < $arrLength; $x++){
+if(mysqli_query($connect, $animalArray[$x])){
   echo "<br />Record added successfully";
 }else{
   echo "<br />Error: " . mysqli_error($connect);
 }
+}
+
+//function to remove entrys
+//--------------------
+
+//  function removeEntry($name){
+//    $sql_remove = "DELETE FROM Animal_Table WHERE Name='$name'";
+//    return $sql_remove;
+//  }
+//
+// $deleteString = removeEntry('Bullet');
+//
+// if(mysqli_query($connect, $deleteString)){
+//   echo "<br />Record removed successfully";
+// }else{
+//   echo "<br />Error: " . mysqli_error($connect);
+// }
+
 mysqli_close($connect);
 
 

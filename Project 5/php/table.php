@@ -8,6 +8,8 @@ $user = 'root';
 //attempt to connecdt to DB
 $connect = mysqli_connect($server, $user);
 
+echo '<div style="display:none;">';
+
 //check for connection
 if(!$connect){
   die('Connection failed: ' . mysqli_connect_error($connect));
@@ -103,6 +105,34 @@ if(mysqli_query($connect, $animalArray[$x])){
 // }else{
 //   echo "<br />Error: " . mysqli_error($connect);
 // }
+
+echo '</div>';
+
+$sql_select = "SELECT ID, Name, Species, Breed, Gender, Color, Age, Size FROM Animal_Table";
+$result = mysqli_query($connect, $sql_select);
+
+if($result){
+  
+    //create table
+  echo '<table>';
+
+  //create header row
+  echo '<tr>';
+  echo '<th>ID</th><th>Name</th><th>Species</th><th>Breed</th><th>Gender</th><th>Color</th><th>Age</th><th>Size</th>';
+  echo '</tr>';
+
+  //name species breed gender color age size
+  if(mysqli_num_rows($result)>0){
+    while($row = mysqli_fetch_assoc($result)){
+      echo '<tr><td>' . $row["ID"] . '</td><td>' . $row["Name"] . '</td><td>' . $row["Species"] . '</td><td>' . $row["Breed"] . '</td><td>' . $row["Gender"] . '</td><td>' . $row["Color"] . '</td><td>' . $row["Age"] . '</td><td>' . $row["Size"] . '</td></tr>';
+    }
+    echo '</table>';
+  }
+
+}
+
+
+
 
 mysqli_close($connect);
 

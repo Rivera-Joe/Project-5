@@ -9,8 +9,13 @@ body{
   padding:0;
   margin:0;
   font-family: sans-serif;
+  display:flex;
+ 
 }
-
+.maincontainer{
+  width:100%;
+  height: 100%;
+}
 
 /* ---------X------------Global---------X-------- */
 /* ---------X------------Global---------X-------- */
@@ -27,7 +32,8 @@ body{
 
 
 /* ----------------Header---------------- */
-header{
+.header-nav{
+  z-index:3;
   position: absolute;
   top:0;
   left:0;
@@ -36,16 +42,17 @@ header{
   margin:0 !important;
   padding:0 !important;
 }
-header .logopic {
-  border:1px solid #fff;
+.header-nav .logopic {
+  /* border:1px solid #fff; */
   width:100px;
   float:left;
+  margin-left:125px;
 }
-header .logopic img {
+.header-nav .logopic img {
   width:100px;
   height: 100px;
 }
-header .logo{
+.header-nav .logo{
   color:#fff;
   height: 50px;
   line-height: 100px;
@@ -54,30 +61,31 @@ header .logo{
   font-weight: bold;
   /* padding-left:120px; */
 }
-header nav{
+.header-nav nav{
   float:right;
 }
-header nav ul{
+.header-nav nav ul{
   margin:0;
   padding:0;
   display: flex;
 }
-header nav ul li{
+.header-nav nav ul li{
   list-style: none;
 }
-header nav ul li a{
+.header-nav nav ul li a{
   height: 50px;
-  line-height: 70px;
-  padding: 15px 35px;
+  line-height: 50px;
+  padding: 30px 40px;
   color:#fff;
   text-decoration: none;
   display:block;
 }
-header nav ul li a:hover{
+.header-nav nav ul li a:hover{
   color:#fff;
-  background-color: #219963;
+  background-color: #0082cd;
+  transition: .3s;
 }
-header .logopic-nav {
+.header-nav .logopic-nav {
   display:none;
 }
 .menu-toggle{
@@ -88,6 +96,9 @@ header .logopic-nav {
   cursor: pointer;
   display:none;
 }
+.menu-toggle:active{
+  color:#0082cd;
+}
 /* --------X-------Header--------X------- */
 
 /* ----------------Aside----------------- */
@@ -95,23 +106,37 @@ header .logopic-nav {
 aside{
   height: 100%;
   width:100px;
-  position: fixed;
   top:0;
   left:0;
-  background-color: #ccc;
+  background-color: #262626;
 }
 aside ul{
-  position:relative;
-  top:45%;
+  position: fixed;
+  width:100px;
+  top:30%;
   list-style: none;
   display:flex;
   flex-direction: column;
   text-align: center;
-
 }
 aside ul li{
   padding:25px 0;
+  font-size: 45px;
+  background-color: #fff;
 }
+aside ul li div{
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  width:50px;
+  height: 50px;
+}
+
+aside ul li:hover{
+  background-color: #0082cd;
+  transition: .2s;
+}
+
 
 /* --------X-------Aside---------X------- */
 
@@ -126,10 +151,14 @@ aside ul li{
 }
 .title{
   display:block;
-  background-color: #ccc;
+  /* background-color: #0082cd; */
+  background-image: url("../images/background-petpattern.jpg");
   width:100%;
   line-height: 6em;
-  margin-top:-25px;
+  -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: fff;
+  font-size: 2em;
 }
 .title h1{
   text-align: center;
@@ -145,8 +174,9 @@ aside ul li{
 }
 .content-lives-change{
   width:100%;
-  height:500px;
-  border:1px solid #000;
+  max-height: 3900px;
+  min-height: 600px;
+  /* border:1px solid #000; */
   margin-bottom:50px;
 }
 .content-events{
@@ -155,7 +185,256 @@ aside ul li{
   border:1px solid #000;
   margin-bottom:50px;
 }
+.image-content{
+  background-image: url("../images/Brown-male-cat1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width:100%;
+}
+
+
+
+.wrapper {
+	margin: 0 auto 100px auto;
+  max-width: 1290px;
+  
+}
+
+.stage {
+	list-style: none;
+	padding: 0;
+}
+
+/*************************************
+Build the scene and rotate on hover
+**************************************/
+
+.scene {
+  z-index: -4;
+	width: 260px;
+	height: 400px;
+	margin: 30px;
+	float: left;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.movie {
+	width: 260px;
+	height: 400px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-130px);
+	-moz-transform: translateZ(-130px);
+	transform: translateZ(-130px);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+	transition: transform 350ms;
+}
+
+.movie:hover {
+	-webkit-transform: rotateY(-78deg) translateZ(20px);
+	-moz-transform: rotateY(-78deg) translateZ(20px);
+	transform: rotateY(-78deg) translateZ(20px);
+}
+
+/*************************************
+Transform and style the two planes
+**************************************/
+
+.movie .poster,
+.movie .info {
+	position: absolute;
+	width: 260px;
+	height: 400px;
+	background-color: #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.movie .poster  {
+	-webkit-transform: translateZ(130px);
+	-moz-transform: translateZ(130px);
+	transform: translateZ(130px);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.movie .info {
+	-webkit-transform: rotateY(90deg) translateZ(130px);
+	-moz-transform: rotateY(90deg) translateZ(130px);
+	transform: rotateY(90deg) translateZ(130px);
+	border: 4px solid #fff;
+	font-size: 0.75em;
+}
+
+/*************************************
+Shadow beneath the 3D object
+**************************************/
+
+.csstransforms3d .movie::after {
+	content: '';
+	width: 260px;
+	height: 260px;
+	position: absolute;
+	bottom: 0;
+	box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+	-webkit-transform-origin: 100% 100%;
+	-moz-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+	-webkit-transform: rotateX(90deg) translateY(130px);
+	-moz-transform: rotateX(90deg) translateY(130px);
+	transform: rotateX(90deg) translateY(130px);
+	-webkit-transition: box-shadow 350ms;
+	-moz-transition: box-shadow 350ms;
+	transition: box-shadow 350ms;
+}
+
+.csstransforms3d .movie:hover::after {
+	box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
+}
+
+/*************************************
+Movie information
+**************************************/
+
+.info header {
+	color: #FFF;
+	padding: 7px 10px;
+	font-weight: bold;
+	height: 195px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-shadow: 0px 1px 1px rgba(0,0,0,1);
+}
+
+
+
+.info p {
+	padding: 1.2em 1.4em;
+	margin: 2px 0 0;
+	font-weight: 700;
+	color: #666;
+	line-height: 1.4em;
+
+}
+
+/*************************************
+Generate "lighting" using box shadows
+**************************************/
+
+.movie .poster,
+.movie .info,
+.movie .info header {
+	-webkit-transition: box-shadow 350ms;
+	-moz-transition: box-shadow 350ms;
+	transition: box-shadow 350ms;
+}
+
+.csstransforms3d .movie .poster {
+	box-shadow: inset 0px 0px 40px rgba(255,255,255,0);
+}
+
+.csstransforms3d .movie:hover .poster {
+	box-shadow: inset 300px 0px 40px rgba(255,255,255,0.8);
+}
+
+.csstransforms3d .movie .info,
+.csstransforms3d .movie .info header {
+	box-shadow: inset -300px 0px 40px rgba(0,0,0,0.5);
+}
+
+.csstransforms3d .movie:hover .info,
+.csstransforms3d .movie:hover .info header {
+	box-shadow: inset 0px 0px 40px rgba(0,0,0,0);
+}
+
+/*************************************
+Posters and still images
+**************************************/
+
+.scene:nth-child(1) .movie .poster {
+  background-image: url(../images/Brown-male-dog1.jpg);
+  background-position: 30%;
+
+}
+
+.scene:nth-child(2) .poster {
+  background-image: url(../images/Gray-male-dog1.jpg);
+  background-position: 50%;
+}
+
+.scene:nth-child(3) .poster {
+  background-image: url(../images/Black-female-cat1.jpg);
+  background-position: 50%;
+}
+.scene:nth-child(4) .poster {
+  background-image: url(../images/Black-male-cat1.jpg);
+  background-position: 50%;
+}
+.info .img-pet1{
+  background-image: url(../images/Brown-male-dog1-xs.jpg);
+}
+
+.info .img-pet2{
+  background-image: url(../images/Gray-male-dog1.jpg);
+}
+.info .img-pet3{
+  background-image: url(../images/Black-female-cat1.jpg);
+}
+.info .img-pet4{
+  background-image: url(../images/Black-male-cat1.jpg);
+}
+/*************************************
+Fallback
+**************************************/
+.no-csstransforms3d .movie .poster,
+.no-csstransforms3d .movie .info {
+	position: relative;
+}
+
+/*************************************
+Media Queries
+**************************************/
+@media screen and (max-width: 60.75em){
+	.scene {
+		float: none;
+    margin: 30px auto 60px;
+	}
+}
 /* -------X-------Main-----------X---------- */
+
+
+/* ---------------Footer--------------------- */
+footer{
+background-color: #262626;
+color:#fff;
+margin-top:260px;
+height: 300px;
+}
+.footer-container{
+  display: flex;
+  justify-content: space-around;
+  width:60%;
+  margin:auto;
+  background-color: #262626;
+}
+.footer-logo img{
+  width:150px;
+  height: 150px;
+}
+.fastlinks{
+  flex-wrap: wrap;
+  border:1px solid #fff;
+}
+
+
+
+/* ----------X--------Footer---------X--------- */
 
 
 
@@ -177,22 +456,22 @@ aside ul li{
     width:100%;
   }
   /* -----------------MobileHeader------------------- */
-  header{
+  .header-nav{
     position: fixed;
     padding:0 20px;
   }
-  header .logo{
+  .header-nav .logo{
     line-height: 50px;
     padding-left:20px;
   }
-  header .logopic{
+.header-nav .logopic{
     display:none;
   }
   .menu-toggle{
     display:block;
     margin-right: 20px;
   }
-  header nav{
+  .header-nav nav{
     /* display:none; */
     position: fixed;
     width:100%;
@@ -201,40 +480,47 @@ aside ul li{
     top:50px;
     left:-100%;
     transition:0.5s ;
+    z-index: 5;
   }
-  header nav.active{
+  .header-nav nav.active{
     left:0;
   }
-   header nav ul{
+   .header-nav nav ul{
      display:block;
      text-align: center;
    }
-   header nav ul li{
+   .header-nav nav ul li{
      border-bottom: 1px solid rgba(0,0,0,.2);
    }
-   header .logopic-nav {
+   .header-nav .logopic-nav {
      display:block;
      margin:auto;
+   }
+   .header-nav .logopic-nav img{
+     width:250px;
+     height:250px;
    }
  /* ----------X------MobileHeader---------X---------- */
 
 /* -----------------MobileAside------------------- */
   aside{
     position: absolute;
-    top:2000px;
+    top:5000px;
     width:100%;
-    height: 150px;
+    height: 100px;
+    z-index: -2;
   }
   aside ul{
+    position: relative;
     top:0;
-    border:1px solid #000;
+    left:23%;
     flex-direction: row;
-    width:90%;
-    margin:auto;
+    margin:auto 0;
   }
   aside ul li{
-    padding:0 7%;
+    padding: 25px 25px;
   }
+
 
  /* ---------X-------MobileAside---------X--------- */
 
@@ -242,11 +528,63 @@ aside ul li{
 .mySlides{
   height: 400px;
 }
+.content-lives-change{
+  height:100%;
+}
+.scene {
+	width: 420px;
+	height: 800px;
+  margin-top: 80px;
+  perspective: 2000px;
+}
+.movie {
+	width: 420px;
+	height: 800px;
+	/* -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-130px);
+	-moz-transform: translateZ(-130px);
+	transform: translateZ(-130px);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+	transition: transform 350ms; */
+}
+.movie:hover {
+	transform: rotateY(-85deg) translateZ(-30px);
+}
+.movie .poster,
+.movie .info {
+	width: 420px;
+	height: 800px;
+}
+.movie .poster  {
+	transform: translateZ(220px);
+}
+
 
 /* -------X-------MobileMain-----------X---------- */
 
 
+/* ---------------MobileFooter--------------------- */
+footer{
+  }
+  .footer-container{
+    width:95%;
+  }
+  .footer-logo img{
+    width:150px;
+    height: 150px;
+  }
+  .fastlinks{
+    flex-wrap: wrap;
+    border:1px solid #fff;
+    width:100%;
+  }
 
+
+
+  /* ----------X--------MobileFooter---------X--------- */
 
 
 }

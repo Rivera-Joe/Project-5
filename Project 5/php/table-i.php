@@ -236,7 +236,7 @@ aside ul li{
 /* -----------------MobileAside------------------- */
   aside{
     position: absolute;
-    top: 5000px; 
+    top: 100px;
     width:100%;
     height: 150px;
   }
@@ -274,7 +274,7 @@ aside ul li{
 
     table{
       border-collapse: collapse;
-     
+      margin-top: 300px;
       max-width: 50%;
       min-width: 30%;
       margin-left: auto;
@@ -297,7 +297,7 @@ aside ul li{
       margin-left: auto;
       margin-right: auto;
     }
-    
+
   </style>
 </head>
 <body>
@@ -326,7 +326,9 @@ aside ul li{
 
 
 <?php
-$_SESSION['count'] = '0';
+
+echo '<h1 style="margin: 300px">' . $_SESSION['count'] . '</h1>';
+
 //set initial values
 $server = 'localhost';
 $user = 'root';
@@ -360,6 +362,11 @@ if(mysqli_query($connect, $sql_createTable)){
 else{
   echo('Could not create table: ' . mysqli_error($connect));
 }
+
+$_SESSION['count'] = null;
+function setStorage(){
+  $_SESSION['count']=0;
+}
 function addEntry($name, $spec, $breed, $gender, $color, $age, $size, $img){
       $sql_add = "INSERT INTO Animal_Table(Name, Species, Breed, Gender, Color, Age, Size, Image) VALUES('$name', '$spec', '$breed', '$gender', '$color', '$age', '$size', '$img')";
       return $sql_add;
@@ -386,9 +393,11 @@ $mackPic = '<img src="../images/mack.jpg"/>';
 $tigerPic = '<img src="../images/tiger.jpg"/>';
 //dogs
 
-if($_SESSION['count'] == '0'){
+if($_SESSION['count'] == null){
 
-  $_SESSION['count'] = '1';
+setStorage();
+
+  echo '<h1 style="margin: 500px">' . $_SESSION['count'] . '</h1>';
 $bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M', $bPic);
 $tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L', $tPic);
 $boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S', $boomPic);
@@ -439,9 +448,9 @@ echo '</div>';
 $sql_select = "SELECT ID, Name, Species, Breed, Gender, Color, Age, Size, Image FROM Animal_Table";
 $result = mysqli_query($connect, $sql_select);
 if($result){
-  
+
     //create table
-  echo '<table style="border-collapse: collapse;">';
+  echo '<table>';
   //create header row
   echo '<tr>';
   echo '<th>ID</th><th>Name</th><th>Species</th><th>Breed</th><th>Gender</th><th>Color</th><th>Age</th><th>Size</th><th>Image</th>';

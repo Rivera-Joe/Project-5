@@ -7,6 +7,7 @@
   <title>Document</title>
   <style>
     table{
+      font-family: sans-serif;
       border-collapse: collapse;
       width: 50%;
       margin-left: auto;
@@ -120,7 +121,7 @@ $tigerPic = '<img src="../images/tiger.jpg"/>';
 
 //dogs
 $bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M', $bPic);
-$tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L', $tPic);
+$tate = addEntry('Tate', 'Dog', 'Labrador', 'F', 'Brown', '4 Years', 'L', $tPic);
 $boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S', $boomPic);
 $hazel = addEntry('Hazel', 'Dog', 'Terrier', 'F', 'White', '1 Year', 'M', $hazelPic);
 $penny = addEntry('Penny', 'Dog', 'Yorkie', 'F', 'Gold', '3 Years', 'S', $pennyPic);

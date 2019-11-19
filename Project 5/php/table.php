@@ -96,30 +96,51 @@ function addEntry($name, $spec, $breed, $gender, $color, $age, $size, $img){
 
 };
 
-$image ='<img src="../images/weePup.jpg"/>';
+$bPic ='<img src="../images/wGHound.jpg"/>';
+$tPic = '<img src="../images/bLab.jpg"/>';
+$boomPic = '<img src="../images/boomer.jpg"/>';
+$hazelPic = '<img src="../images/hazel.jpg"/>';
+$pennyPic = '<img src="../images/penny.jpg"/>';
+$lolaPic = '<img src="../images/lola.jpg"/>';
+$hercPic = '<img src="../images/hercules.webp"/>';
+$cocoPic = '<img src="../images/coco.jpg"/>';
+$archPic = '<img src="../images/archie.jpg"/>';
+$beanPic = '<img src="../images/bean.webp"/>';
+
+$boboPic = '<img src="../images/bobo.jpg"/>';
+$calPic = '<img src="../images/calypso.jpg"/>';
+$lilyPic = '<img src="../images/lily.jpg"/>';
+$meowPic = '<img src="../images/meowming.jpg"/>';
+$sandyPic = '<img src="../images/sandy.jpg"/>';
+$daisyPic = '<img src="../images/daisy.jpg"/>';
+$caseyPic = '<img src="../images/casey.jpg"/>';
+$jennyPic = '<img src="../images/jenny.jpg"/>';
+$mackPic = '<img src="../images/mack.jpg"/>';
+$tigerPic = '<img src="../images/tiger.jpg"/>';
+
 //dogs
-$bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M', $image);
-$tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L', $image);
-$boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S', $image);
-$hazel = addEntry('Hazel', 'Dog', 'Terrier', 'F', 'White', '1 Year', 'M', $image);
-$penny = addEntry('Penny', 'Dog', 'Yorkie', 'F', 'Gold', '3 Years', 'S', $image);
-$lola = addEntry('Lola', 'Dog', 'Shiba Inu', 'F', 'Brown', '1 Year', 'M', $image);
-$hercules = addEntry('Hercules', 'Dog', 'Bull Dog', 'M', 'Grey', '2 Years', 'M', $image);
-$coco = addEntry('Coco', 'Dog', 'Labrador', 'F', 'Brown', '6 Years', 'L', $image);
-$archie = addEntry('Archie', 'Dog', 'Shih tzu', 'M', 'Brown', '3 Years', 'S', $image);
-$bean = addEntry('Bean', 'Dog', 'Chihuahua', 'M', 'Brown', '1 Year', 'S', $image);
+$bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M', $bPic);
+$tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L', $tPic);
+$boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S', $boomPic);
+$hazel = addEntry('Hazel', 'Dog', 'Terrier', 'F', 'White', '1 Year', 'M', $hazelPic);
+$penny = addEntry('Penny', 'Dog', 'Yorkie', 'F', 'Gold', '3 Years', 'S', $pennyPic);
+$lola = addEntry('Lola', 'Dog', 'Shiba Inu', 'F', 'Brown', '1 Year', 'M', $lolaPic);
+$hercules = addEntry('Hercules', 'Dog', 'Bull Dog', 'M', 'Grey', '2 Years', 'M', $hercPic);
+$coco = addEntry('Coco', 'Dog', 'Labrador', 'F', 'Brown', '6 Years', 'L', $cocoPic);
+$archie = addEntry('Archie', 'Dog', 'Shih tzu', 'M', 'Brown', '3 Years', 'S', $archPic);
+$bean = addEntry('Bean', 'Dog', 'Chihuahua', 'M', 'Brown', '1 Year', 'S', $beanPic);
 
 //cats
-$bobo = addEntry('Bobo', 'Cat', 'Short Hair', 'F', 'Black', '6 Months', 'S', $image);
-$calypso = addEntry('Calypso', 'Cat', 'Long Hair', 'F', 'Turtle Shell', '1 Year', 'M', $image);
-$lily = addEntry('Lily', 'Cat', 'Short Hair', 'F', 'White', '9 Years', 'M', $image);
-$meowMing = addEntry('Meow Ming', 'Cat', 'Short Hair', 'M', 'Brown', '3 Years', 'M', $image);
-$sandy = addEntry('Sandy', 'Cat', 'Short Hair', 'F', 'Brown', '2 Years', 'M', $image);
-$daisy = addEntry('Daisy', 'Cat', 'Short Hair', 'F', 'White', '1 Year', 'M', $image);
-$casey = addEntry('Casey', 'Cat', 'Short Hair', 'F', 'Black', '8 Months', 'S', $image);
-$jenny = addEntry('Jenny', 'Cat', 'Short Hair', 'F', 'White', '6 Months', 'S', $image);
-$mack = addEntry('Mack', 'Cat', 'Short Hair', 'M', 'Brown', '5 Years', 'L', $image);
-$tiger = addEntry('Tiger', 'Cat', 'Short Hair', 'M', 'Grey', '3 Years', 'L', $image);
+$bobo = addEntry('Bobo', 'Cat', 'Short Hair', 'F', 'Black', '6 Months', 'S', $boboPic);
+$calypso = addEntry('Calypso', 'Cat', 'Long Hair', 'F', 'Turtle Shell', '1 Year', 'M', $calPic);
+$lily = addEntry('Lily', 'Cat', 'Short Hair', 'F', 'White', '9 Years', 'M', $lilyPic);
+$meowMing = addEntry('Meow Ming', 'Cat', 'Short Hair', 'M', 'Brown', '3 Years', 'M', $meowPic);
+$sandy = addEntry('Sandy', 'Cat', 'Short Hair', 'F', 'Brown', '2 Years', 'M', $sandyPic);
+$daisy = addEntry('Daisy', 'Cat', 'Short Hair', 'F', 'White', '1 Year', 'M', $daisyPic);
+$casey = addEntry('Casey', 'Cat', 'Short Hair', 'F', 'Black', '8 Months', 'S', $caseyPic);
+$jenny = addEntry('Jenny', 'Cat', 'Short Hair', 'F', 'White', '6 Months', 'S', $jennyPic);
+$mack = addEntry('Mack', 'Cat', 'Short Hair', 'M', 'Brown', '5 Years', 'L', $mackPic);
+$tiger = addEntry('Tiger', 'Cat', 'Short Hair', 'M', 'Grey', '3 Years', 'L', $tigerPic);
 
 $animalArray = array($bullet, $tate, $boomer, $hazel, $penny, $lola, $hercules, $coco, $archie, $bean, $bobo, $calypso, $lily, $meowMing, $sandy, $daisy, $casey, $jenny, $mack, $tiger);
 $arrLength = sizeof($animalArray);

@@ -1,0 +1,16 @@
+.left-column{
+  float:left;
+  width:65%;
+  padding:25px;
+}
+
+.right-column{
+  float:left;
+  width:25%;
+  padding:25px;
+}
+
+.adoptioninfopic{
+	max-width: 100%;
+  max-height: auto;
+}

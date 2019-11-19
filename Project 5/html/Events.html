@@ -31,9 +31,9 @@
        <div class="logo">HAPPY TAILS</div>
        <nav class="active">
          <ul>
-           <li><a href="#" >Home</a></li>
+           <li><a href="index.html" >Home</a></li>
            <li><a href="#">Adopt</a></li>
-           <li><a href="Events.html">Events</a></li>
+           <li><a href="#">Events</a></li>
            <li><a href="#">Resources</a></li>
            <li><a href="#">Animal Control</a></li>
            <div class="logopic-nav">
@@ -45,94 +45,112 @@
     </header>
 
     <main>
-      <div class="imgbox">
-              <img class="mySlides" src="../Images/catkid.jpg">
-              <img class="mySlides" src="../Images/Dualcolor-male-cat1.jpg">
-              <img class="mySlides" src="../Images/Lightbrown-male-cat1.jpg">
-      </div>
-      <div class="title"><h1>Lives Change</h1></div>
-      <div class="arrow-down"></div>
-       <div class="content-lives-change">
+      
 
-
-     			<div class="wrapper">
-     				<ul class="stage clearfix">
-
-     					<li class="scene" data-aos="zoom-in" data-aos-offset="0" >
-     						<div class="movie" onclick="return true">
-     							<div class="poster"></div>
-     							<div class="info">
-     									<header class="img-pet1">
-     											<h1>Doggo 1</h1>
-     											<span class="age">1 year old</span>
-     									</header>
-     								<p>
-     									testsetesteststeststest
-     								</p>
-     							</div>
-     						</div>
-     					</li>
-
-     					<li class="scene" data-aos="zoom-in" data-aos-offset="0">
-     						<div class="movie" onclick="return true">
-     							<div class="poster"></div>
-     							<div class="info">
-                    <header class="img-pet2">
-                      <h1>Doggo 2</h1>
-                      <span class="age">1 year old</span>
-                  </header>
-     								<p>
-     									A cattle baron takes in an orphaned boy and raises him, causing his own son to resent the boy. As they get older the resentment festers into hatred, and eventually the real son frames his stepbrother for fathering an illegitimate child that is actually his, seeing it as an opportunity to get his half-brother out of the way so he can have his father's empire all to himself.
-     								</p>
-     							</div>
-     						</div>
-     					</li>
-
-     					<li class="scene" data-aos="zoom-in" data-aos-offset="0">
-     						<div class="movie" onclick="return true">
-     							<div class="poster"></div>
-     							<div class="info">
-                    <header class="img-pet3">
-                      <h1>Catto 1</h1>
-                      <span class="age">1 year old</span>
-                  </header>
-     								<p>
-     									The Tramp travels to the Yukon to take part in the Klondike Gold Rush. He gets mixed up with some burly characters and falls in love with the beautiful Georgia. He tries to win her heart with his singular charm.
-     								</p>
-     							</div>
-     						</div>
-               </li>
-               
-               <li class="scene" data-aos="zoom-in" data-aos-offset="0">
-                <div class="movie" onclick="return true">
-                  <div class="poster"></div>
-                  <div class="info">
-                    <header class="img-pet4">
-                      <h1>Catto2</h1>
-                      <span class="age">1 year old</span>
-                  </header>
-                    <p>
-                      The Tramp travels to the Yukon to take part in the Klondike Gold Rush. He gets mixed up with some burly characters and falls in love with the beautiful Georgia. He tries to win her heart with his singular charm.
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-     				</ul>
-     			</div><!-- /wrapper -->
-
-       </div>
-       <div class="image-content">
-         <div class="image-window">
-           
-         </div>
-       </div>
-
-      <div class="title"><h1>Events</h1></div>
+      <div class="title" style= "margin-top: 5%;"><h1>Events</h1></div>
       <div class="arrow-down"></div>
       <div class="content-events">
       
       <!--Calendar-->
+      
+      <style>
+      
+      .content-events{
+  width:100%;
+  height:1000px;
+  border:1px solid #000;
+  margin-bottom:50px;
+}
+      
+      table, th, td {
+
+border-width: 1px;
+
+border-style: solid;
+
+}
+
+table {
+margin-top: 20px;
+margin-left: 20px;
+}
+
+.month {
+background-color: #1abc9c;
+}
+
+th {
+padding: 20px;
+}
+
+td {
+padding: 20px;
+}
+
+.prev{
+background-color: #c1c1c1;
+}
+
+.next{
+background-color: #c1c1c1;
+}
+
+.next:hover{
+cursor: pointer;
+}
+
+.prev:hover{
+cursor: pointer;
+}
+
+.dates{
+background-color: #c1c1c1;
+text-align: center;
+}
+
+.days{
+background-color: #dddddd;
+}
+
+#adoption {
+display: none;
+height: 400px;
+width: 400px;
+position: absolute;
+left: 45%;
+top: 40%;
+background-color: #8bacc6;
+border: 1px solid;
+padding: 5px;
+box-shadow: 5px 10px #888888;
+} 
+
+#Event1:hover #stuff{
+display: block;
+}
+
+#stuff {
+display: none;
+height: 400px;
+width: 400px;
+position: absolute;
+left: 45%;
+top: 40%;
+background-color: #8bacc6;
+border: 1px solid;
+padding: 10px;
+box-shadow: 5px 10px #888888;
+}
+
+@media screen and (max-width:720px) {
+  #adoption, #stuff {left: 20%;}
+}
+
+#Event2:hover #adoption{
+display: block;
+}
+
+      </style>
       
       <div style="overflow-x:auto;">
         <table id="December" style="display: none; max-width: 514px;">
@@ -455,10 +473,22 @@
 
 
 </table>
-
 </div>
+
+<h1 style= "text-decoration: underline; color:#00ffff; text-align: center; margin-top: 20px;">Vaccination Event:</h1>
+<p style="text-align: center; margin-top: 20px; font-size: 19px;">Come visit us on the second Saturday of every month<br />
+if your a pet owner who would like to get their cat or dog vaccinated!<br />
+Though we offer vaccinations at any time during business hours,<br />we host a bi-weekly event for reduced vaccination cost.</p>
+
+<h1 style= "text-decoration: underline; color:#00ffff; text-align: center; margin-top: 20px;">Adoption Event:</h1>
+<p style="text-align: center; margin-top: 20px; font-size: 19px;">Come visit us on the fourth Saturday of every month<br />
+if you are looking to adopt a loveable new friend!<br />
+Though you are welcome to inquire about adoption at any time,<br />we host a monthly adoption event.</p>
+
       </div>
+      
     </main>
+    
     <footer>
       <div class="footer-container">
       <div class="content-contact">

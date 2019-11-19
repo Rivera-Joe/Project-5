@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,7 +236,7 @@ aside ul li{
 /* -----------------MobileAside------------------- */
   aside{
     position: absolute;
-    top:2000px;
+    top: 5000px; 
     width:100%;
     height: 150px;
   }
@@ -268,7 +274,9 @@ aside ul li{
 
     table{
       border-collapse: collapse;
-      width: 50%;
+     
+      max-width: 50%;
+      min-width: 30%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
@@ -294,16 +302,7 @@ aside ul li{
 </head>
 <body>
 
-<div class="asidecontainer">
-    <aside class="aside-desktop">
-      <ul>
-        <li><div><i class="fa fa-facebook-square" style="color:#3b5998;" ></i></div></li>
-        <li><div><i class="fa fa-instagram" style="color:#bc2a8d;" ></i></div></li>
-        <li><div><i class="fa fa-youtube-square" style="color:#c4302b" ></i></div></li>
-        <li><div><i class="fa fa-twitter-square" style="color:#00aced;"></i></div></li>
-      </ul>
-    </aside>
-    </div>
+
     <div class="maincontainer">
     <header class="header-nav">
        <div class="logopic">
@@ -327,7 +326,7 @@ aside ul li{
 
 
 <?php
-
+$_SESSION['count'] = '0';
 //set initial values
 $server = 'localhost';
 $user = 'root';
@@ -386,6 +385,10 @@ $jennyPic = '<img src="../images/jenny.jpg"/>';
 $mackPic = '<img src="../images/mack.jpg"/>';
 $tigerPic = '<img src="../images/tiger.jpg"/>';
 //dogs
+
+if($_SESSION['count'] == '0'){
+
+  $_SESSION['count'] = '1';
 $bullet = addEntry('Bullet', 'Dog', 'Grey Hound','M', 'White', '1 Year', 'M', $bPic);
 $tate = addEntry('Tate', 'Dog', 'Labradory', 'F', 'Brown', '4 Years', 'L', $tPic);
 $boomer = addEntry('Boomer', 'Dog', 'Corgi', 'M', 'Brown', '6 Months', 'S', $boomPic);
@@ -415,6 +418,8 @@ if(mysqli_query($connect, $animalArray[$x])){
 }else{
   echo "<br />Error: " . mysqli_error($connect);
 }
+}
+
 }
 //function to remove entrys
 //--------------------
@@ -451,7 +456,16 @@ if($result){
 }
 mysqli_close($connect);
  ?>
-
+<div class="asidecontainer">
+    <aside class="aside-desktop">
+      <ul>
+        <li><div><i class="fa fa-facebook-square" style="color:#3b5998;" ></i></div></li>
+        <li><div><i class="fa fa-instagram" style="color:#bc2a8d;" ></i></div></li>
+        <li><div><i class="fa fa-youtube-square" style="color:#c4302b" ></i></div></li>
+        <li><div><i class="fa fa-twitter-square" style="color:#00aced;"></i></div></li>
+      </ul>
+    </aside>
+</div>
 <footer style="margin-left: 25%;width: 50%;">
       <div class="footer-container">
       <div class="content-contact">

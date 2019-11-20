@@ -1,0 +1,83 @@
+.Widget-Base {
+  padding: 0.8em;
+  padding-top: 1em;
+  margin: 0;
+  margin-bottom: 2em;
+
+  border-top: #0082cd 9px solid;
+  border-bottom: #0082cd 9px solid;
+}
+
+.Widget-MiniFAQ * {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+
+  font-family: sans-serif;
+}
+
+.Widget-MiniFAQ dt.active:before {
+  content: "> ";
+}
+
+/* Widget css below this line ----------- */
+
+.Widget-MiniFAQ dl a {color: #339;}
+.Widget-MiniFAQ dl a:hover {color: #9CDDE6;}
+.Widget-MiniFAQ dt {font-weight: bold; margin: 0.4em 0;}
+
+.Widget-MiniFAQ dt.active,
+.Widget-MiniFAQ dt.active a {color: #0082cd;}
+
+.Widget-MiniFAQ dt.active + dd {display: block !important;}
+
+.Widget-MiniFAQ.TwoCol {
+  position: relative;
+  min-height:400px;
+}
+
+.Widget-MiniFAQ.TwoCol dl,
+.Widget-MiniFAQ.TwoCol dd {
+  width: 48%;
+}
+
+.Widget-MiniFAQ.TwoCol dd
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #0082cd;
+  color:#FFF;
+  padding: 0 0.8em 0.4em;
+  overflow: auto;
+  border: 0px solid #FFF;
+  border-width: 15px 0 0
+}
+
+.Widget-MiniFAQ.TwoCol dd h3 {
+  color: #004687;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #FFF;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.Widget-MiniFAQ .AnswerIntro {
+  margin: auto;
+  text-align: center;
+}
+
+.faqintro {
+  color:#339;
+  font-family:sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  padding:20px 20px;
+  width: 600px;
+  background-color: #9CDDE6;;
+  position: relative;
+  border-style: solid;
+  border-color: #339; 
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  }
